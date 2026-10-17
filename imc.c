@@ -1,31 +1,33 @@
-#include<stdio.h>
-#include<stdlib.h>
- 
-int main() {
-    float P, H, IMC;
-    
-    printf("Peso:\n");
-    scanf("%f", &P);
-    
-    printf("Altura:\n");
-    scanf("%f", &H);
-    
-        IMC = P / (H*H);
-        if (IMC < 26){
-            printf("Indice de Massa Corporea e %.2f e esta Magro\n", IMC );
-            }
-        
-        elseif (IMC >=19 &&  IMC<25){
-            printf("Indice de Massa Corporea e %.2f e esta Ideal\n", IMC );
-            }
-            
-        elseif (IMC >=26 &&  IMC<30){
-           printf ("Indice de Massa Corporea e %.2f e esta Acima do Peso\n", IMC);
-           }
-        
-        else (IMC >=30){
-           printf("Indice de Massa Corporea e %.2f e esta com Obesidade\n", IMC);
-           }
-                    system("pause");
-                    
+#include <stdio.h>
+
+int main(void) {
+    float peso, altura, imc;
+
+    printf("Peso (kg): ");
+    fflush(stdout);
+    if (scanf("%f", &peso) != 1 || peso <= 0) {
+        fprintf(stderr, "Peso inválido. Informe um número maior que zero.\n");
+        return 1;
     }
+
+    printf("Altura (m): ");
+    fflush(stdout);
+    if (scanf("%f", &altura) != 1 || altura <= 0) {
+        fprintf(stderr, "Altura inválida. Informe um número maior que zero.\n");
+        return 1;
+    }
+
+    imc = peso / (altura * altura);
+
+    if (imc < 19) {
+        printf("O seu índice de massa corpórea é %.2f: você está magro.\n", imc);
+    } else if (imc < 25) {
+        printf("O seu índice de massa corpórea é %.2f: você está no peso ideal.\n", imc);
+    } else if (imc < 30) {
+        printf("O seu índice de massa corpórea é %.2f: você está acima do peso.\n", imc);
+    } else {
+        printf("O seu índice de massa corpórea é %.2f: você está com obesidade.\n", imc);
+    }
+
+    return 0;
+}
