@@ -33,7 +33,10 @@ class AutossencialTest extends TestCase
         $this->get('/logo')
             ->assertOk()
             ->assertSee('Símbolo em CSS')
-            ->assertSee('clip-path: polygon', false);
+            ->assertSee('Só as setas')
+            ->assertSee('íris em PNG')
+            ->assertSee('clip-path: polygon', false)
+            ->assertSee('images/mark-iris.png', false);
     }
 
     public function test_guest_cannot_open_the_app(): void

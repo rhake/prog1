@@ -63,6 +63,13 @@
   }
   .mark .blade { background: #f07010; }
   .mark .bracket { background: #fff; }
+  .mark .iris {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
 </style>
 @endpush
 
@@ -70,7 +77,7 @@
     <main class="logo-stage">
         <a href="{{ route('home') }}">Voltar ao início</a>
         <h1>Símbolo em CSS</h1>
-        <p class="lead">Cantos, íris e o triângulo do centro desenhados com CSS, sem usar a imagem.</p>
+        <p class="lead">Três modelos: o símbolo inteiro em CSS, só as setas, e as setas em CSS com a íris em PNG.</p>
         <div class="logo-compare">
             <figure>
                 <div class="mark" role="img" aria-label="Símbolo da Autossencial desenhado em CSS">
@@ -93,6 +100,27 @@
             <figure>
                 <img src="{{ asset('images/mark.png') }}" alt="Símbolo original da Autossencial">
                 <figcaption>Original</figcaption>
+            </figure>
+        </div>
+        <div class="logo-compare">
+            <figure>
+                <div class="mark" role="img" aria-label="Apenas as setas do símbolo, em CSS">
+                        <span class="bracket" style="clip-path: polygon(9.09% 28.36%, 9.79% 6.34%, 30.42% 6.72%, 30.77% 10.45%, 30.07% 11.19%, 17.48% 11.19%, 17.13% 11.57%, 23.43% 18.28%, 23.08% 19.40%, 20.63% 22.01%, 13.99% 14.93%, 13.29% 15.67%, 13.64% 28.73%, 9.44% 29.10%)"></span>
+                        <span class="bracket" style="clip-path: polygon(68.88% 6.72%, 89.86% 6.34%, 90.21% 28.73%, 86.71% 29.10%, 86.01% 27.99%, 86.36% 16.42%, 85.66% 14.93%, 79.37% 21.64%, 76.22% 18.28%, 82.52% 11.57%, 82.17% 11.19%, 69.58% 11.19%, 68.88% 10.45%)"></span>
+                        <span class="bracket" style="clip-path: polygon(9.09% 92.16%, 9.79% 70.15%, 13.29% 70.52%, 13.64% 84.70%, 20.63% 77.24%, 23.78% 80.60%, 16.78% 88.06%, 17.13% 88.43%, 30.42% 88.81%, 30.07% 92.54%, 9.79% 92.91%)"></span>
+                        <span class="bracket" style="clip-path: polygon(69.23% 88.81%, 82.52% 88.43%, 82.87% 88.06%, 76.22% 80.97%, 76.22% 80.22%, 78.67% 77.61%, 79.37% 77.61%, 86.01% 84.70%, 86.36% 70.52%, 90.21% 70.52%, 89.86% 92.91%, 69.58% 92.54%)"></span>
+                </div>
+                <figcaption>Só as setas</figcaption>
+            </figure>
+            <figure>
+                <div class="mark" role="img" aria-label="Setas em CSS com a íris laranja em PNG">
+                        <span class="bracket" style="clip-path: polygon(9.09% 28.36%, 9.79% 6.34%, 30.42% 6.72%, 30.77% 10.45%, 30.07% 11.19%, 17.48% 11.19%, 17.13% 11.57%, 23.43% 18.28%, 23.08% 19.40%, 20.63% 22.01%, 13.99% 14.93%, 13.29% 15.67%, 13.64% 28.73%, 9.44% 29.10%)"></span>
+                        <span class="bracket" style="clip-path: polygon(68.88% 6.72%, 89.86% 6.34%, 90.21% 28.73%, 86.71% 29.10%, 86.01% 27.99%, 86.36% 16.42%, 85.66% 14.93%, 79.37% 21.64%, 76.22% 18.28%, 82.52% 11.57%, 82.17% 11.19%, 69.58% 11.19%, 68.88% 10.45%)"></span>
+                        <span class="bracket" style="clip-path: polygon(9.09% 92.16%, 9.79% 70.15%, 13.29% 70.52%, 13.64% 84.70%, 20.63% 77.24%, 23.78% 80.60%, 16.78% 88.06%, 17.13% 88.43%, 30.42% 88.81%, 30.07% 92.54%, 9.79% 92.91%)"></span>
+                        <span class="bracket" style="clip-path: polygon(69.23% 88.81%, 82.52% 88.43%, 82.87% 88.06%, 76.22% 80.97%, 76.22% 80.22%, 78.67% 77.61%, 79.37% 77.61%, 86.01% 84.70%, 86.36% 70.52%, 90.21% 70.52%, 89.86% 92.91%, 69.58% 92.54%)"></span>
+                        <img class="iris" src="{{ asset('images/mark-iris.png') }}" alt="">
+                </div>
+                <figcaption>Setas em CSS + íris em PNG</figcaption>
             </figure>
         </div>
     </main>
