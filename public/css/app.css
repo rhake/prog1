@@ -452,3 +452,36 @@ tr:last-child td { border-bottom: 0; }
   .brand-logo { height: 44px; }
   .nav-actions { width: 100%; justify-content: flex-end; }
 }
+
+.arrow-frame {
+  --arrow-size: 42px;
+  --arrow-color: currentColor;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  min-width: calc(var(--arrow-size) * 4.4);
+  padding: calc(var(--arrow-size) * .9) calc(var(--arrow-size) * 1.2);
+  text-align: center;
+}
+.arrow-frame .arrow {
+  position: absolute;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  background: var(--arrow-color);
+  pointer-events: none;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 38% 20%, 66% 52%, 54% 68%, 20% 38%, 20% 100%, 0 100%);
+}
+.arrow-frame .arrow.tl { top: 0; left: 0; }
+.arrow-frame .arrow.tr { top: 0; right: 0; transform: scaleX(-1); }
+.arrow-frame .arrow.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.arrow-frame .arrow.br { bottom: 0; right: 0; transform: scale(-1); }
+.arrow-frame-text {
+  position: relative;
+  z-index: 1;
+  font-weight: 650;
+  letter-spacing: .02em;
+  line-height: 1.25;
+}
+.arrow-frame-sm { --arrow-size: 28px; }
+.arrow-frame-lg { --arrow-size: 56px; }
+.arrow-frame-orange { --arrow-color: var(--orange); }

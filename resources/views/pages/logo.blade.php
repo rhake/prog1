@@ -70,6 +70,17 @@
     height: 100%;
     object-fit: fill;
   }
+  .phrase-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: min(640px, 100%);
+    padding-top: 8px;
+  }
+  .phrase-gallery .arrow-frame-text {
+    font-size: clamp(1.15rem, 3.4vw, 1.7rem);
+  }
 </style>
 @endpush
 
@@ -77,7 +88,7 @@
     <main class="logo-stage">
         <a href="{{ route('home') }}">Voltar ao início</a>
         <h1>Símbolo em CSS</h1>
-        <p class="lead">Três modelos: o símbolo inteiro em CSS, só as setas, e as setas em CSS com a íris em PNG.</p>
+        <p class="lead">Três modelos: o símbolo inteiro em CSS, só as setas, e as setas em CSS com a íris em PNG. Abaixo, as setas em volta de frases.</p>
         <div class="logo-compare">
             <figure>
                 <div class="mark" role="img" aria-label="Símbolo da Autossencial desenhado em CSS">
@@ -122,6 +133,22 @@
                 </div>
                 <figcaption>Setas em CSS + íris em PNG</figcaption>
             </figure>
+        </div>
+        <h1>Setas em volta de frases</h1>
+        <p class="lead">As quatro setas acompanham o tamanho do texto. Dá para usar em títulos curtos ou em frases de duas linhas.</p>
+        <div class="phrase-gallery">
+            <x-arrow-frame>
+                Autossencial
+            </x-arrow-frame>
+            <x-arrow-frame>
+                Plano de saúde veicular
+            </x-arrow-frame>
+            <x-arrow-frame class="arrow-frame-lg">
+                Procure um ponto<br>de atendimento mais próximo
+            </x-arrow-frame>
+            <x-arrow-frame color="orange">
+                Cuidar do carro ficou simples
+            </x-arrow-frame>
         </div>
     </main>
 @endsection

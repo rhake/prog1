@@ -35,6 +35,8 @@ class AutossencialTest extends TestCase
             ->assertSee('Símbolo em CSS')
             ->assertSee('Só as setas')
             ->assertSee('íris em PNG')
+            ->assertSee('volta de frases')
+            ->assertSee('Plano de saúde veicular')
             ->assertSee('clip-path: polygon', false)
             ->assertSee('images/mark-iris.png', false);
     }
