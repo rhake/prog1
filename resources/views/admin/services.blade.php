@@ -19,13 +19,14 @@
             <tbody>
                 @foreach ($requests as $item)
                     <tr>
-                        <td>{{ $item->service_type }}</td>
+                        <td><a href="{{ route('admin.services.show', $item) }}">{{ $item->service_type }}</a></td>
                         <td>{{ $item->user?->name }}</td>
                         <td>{{ $item->vehicle?->label() }}</td>
                         <td>{{ $item->garage?->name }}</td>
                         <td>{{ optional($item->scheduled_date)->format('d/m/Y') }}</td>
                         <td><x-status :value="$item->status" /></td>
                         <td class="actions">
+                            <a class="btn btn-sm btn-outline" href="{{ route('admin.services.show', $item) }}">{{ __('Detalhes') }}</a>
                             @foreach (['pending' => ['accepted' => __('Aceitar'), 'denied' => __('Recusar')], 'accepted' => ['in_progress' => __('Iniciar'), 'cancelled' => __('Cancelar')], 'in_progress' => ['completed' => __('Concluir')]][$item->status] ?? [] as $status => $label)
                                 <form method="post" action="{{ route('admin.services.update', $item) }}">
                                     @csrf

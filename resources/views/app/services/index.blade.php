@@ -14,6 +14,7 @@
             </div>
             <p class="small muted">{{ $requestItem->description }}</p>
             <p class="small muted">{{ $requestItem->vehicle?->label() }} · {{ $requestItem->garage?->name }} · {{ optional($requestItem->scheduled_date)->format('d/m/Y') }}</p>
+            <a class="btn btn-sm btn-outline" href="{{ route('app.services.show', $requestItem) }}">{{ __('Ver detalhes') }}</a>
             @if (in_array($requestItem->status, ['pending', 'accepted'], true))
                 <form method="post" action="{{ route('app.services.cancel', $requestItem) }}">
                     @csrf

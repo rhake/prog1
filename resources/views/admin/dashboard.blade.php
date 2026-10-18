@@ -29,13 +29,13 @@
         <article class="card stack">
             <h3>{{ __('Serviços recentes') }}</h3>
             @foreach ($recent as $item)
-                <div class="row">
+                <a class="row" href="{{ route('admin.services.show', $item) }}">
                     <span>
                         <strong>{{ $item->service_type }}</strong>
                         <span class="small muted" style="display:block">{{ $item->user?->name }} · {{ optional($item->scheduled_date)->format('d/m/Y') }}</span>
                     </span>
                     <x-status :value="$item->status" />
-                </div>
+                </a>
             @endforeach
         </article>
     </div>

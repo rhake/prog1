@@ -48,6 +48,7 @@ Route::middleware('auth')->prefix('app')->name('app.')->group(function () {
     Route::get('/services', [ServiceRequestController::class, 'index'])->name('services.index');
     Route::get('/services/new', [ServiceRequestController::class, 'create'])->name('services.create');
     Route::post('/services', [ServiceRequestController::class, 'store'])->name('services.store');
+    Route::get('/services/{serviceRequest}', [ServiceRequestController::class, 'show'])->name('services.show');
     Route::patch('/services/{serviceRequest}/cancel', [ServiceRequestController::class, 'cancel'])->name('services.cancel');
 
     Route::get('/map', [MapController::class, 'index'])->name('map');
@@ -68,7 +69,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::patch('/users/{user}', [AdminUserController::class, 'update'])->name('users.update');
     Route::get('/vehicles', [AdminVehicleController::class, 'index'])->name('vehicles');
     Route::get('/services', [AdminServiceRequestController::class, 'index'])->name('services');
+    Route::get('/services/{serviceRequest}', [AdminServiceRequestController::class, 'show'])->name('services.show');
     Route::patch('/services/{serviceRequest}', [AdminServiceRequestController::class, 'update'])->name('services.update');
+    Route::patch('/services/{serviceRequest}/visit', [AdminServiceRequestController::class, 'updateVisit'])->name('services.visit');
+    Route::post('/services/{serviceRequest}/invoice', [AdminServiceRequestController::class, 'storeInvoice'])->name('services.invoice');
+    Route::post('/services/{serviceRequest}/photos', [AdminServiceRequestController::class, 'storePhoto'])->name('services.photos.store');
+    Route::delete('/services/{serviceRequest}/photos/{photo}', [AdminServiceRequestController::class, 'destroyPhoto'])->name('services.photos.destroy');
+    Route::patch('/services/{serviceRequest}/checklist', [AdminServiceRequestController::class, 'updateChecklist'])->name('services.checklist');
     Route::get('/garages', [AdminGarageController::class, 'index'])->name('garages');
     Route::post('/garages', [AdminGarageController::class, 'store'])->name('garages.store');
     Route::delete('/garages/{garage}', [AdminGarageController::class, 'destroy'])->name('garages.destroy');

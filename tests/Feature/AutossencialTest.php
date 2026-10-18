@@ -130,4 +130,101 @@ class AutossencialTest extends TestCase
             'payment_status' => 'paid',
         ]);
     }
+
+    public function test_customer_can_open_service_visit_details(): void
+    {
+        $this->seed();
+
+        $carlos = User::query()->where('email', 'carlos@email.com')->firstOrFail();
+        $brakes = \App\Models\ServiceRequest::query()
+            ->where('user_id', $carlos->id)
+            ->where('service_type', 'Inspeção de Freios')
+            ->firstOrFail();
+
+        $this->actingAs($carlos)
+            ->get('/app/services/'.$brakes->id)
+            ->assertOk()
+            ->assertSee('Inspeção de Freios')
+            ->assertSee('Entrada do veículo')
+            ->assertSee('Saída do veículo')
+            ->assertSee('Nota fiscal')
+            ->assertSee('NFS-e 000.128')
+            ->assertSee('Fotos do serviço')
+            ->assertSee('Pastilhas removidas')
+            ->assertSee('Fotos de entrada')
+            ->assertSee('Frente na entrada')
+            ->assertSee('Fotos de saída')
+            ->assertSee('Check-list de itens')
+            ->assertSee('Para-choque dianteiro')
+            ->assertSee('Risco na ponta direita')
+            ->assertSee('Anotações do prestador')
+            ->assertSee('Pastilhas dianteiras');
+    }
+
+    public function test_customer_cannot_open_another_users_service(): void
+    {
+        $this->seed();
+
+        $ana = User::query()->where('email', 'ana@email.com')->firstOrFail();
+        $brakes = \App\Models\ServiceRequest::query()
+            ->where('service_type', 'Inspeção de Freios')
+            ->firstOrFail();
+
+        $this->actingAs($ana)->get('/app/services/'.$brakes->id)->assertForbidden();
+    }
+
+    public function test_admin_can_edit_service_visit_details(): void
+    {
+        $this->seed();
+
+        $admin = User::query()->where('email', 'admin@autossencial.com')->firstOrFail();
+        $brakes = \App\Models\ServiceRequest::query()
+            ->where('service_type', 'Inspeção de Freios')
+            ->firstOrFail();
+        $item = $brakes->checklistItems()->where('code', 'front_bumper')->firstOrFail();
+
+        $this->actingAs($admin)
+            ->get('/admin/services/'.$brakes->id)
+            ->assertOk()
+            ->assertSee('Horários e anotações')
+            ->assertSee('Check-list de itens')
+            ->assertSee('Nota fiscal');
+
+        $this->actingAs($admin)->patch('/admin/services/'.$brakes->id.'/visit', [
+            'arrived_at' => '2026-10-18T08:00',
+            'departed_at' => '2026-10-18T12:30',
+            'provider_notes' => 'Cliente acompanhou o teste de rua.',
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('service_requests', [
+            'id' => $brakes->id,
+            'provider_notes' => 'Cliente acompanhou o teste de rua.',
+        ]);
+
+        $this->actingAs($admin)->patch('/admin/services/'.$brakes->id.'/checklist', [
+            'items' => [
+                $item->id => ['status' => 'damaged', 'notes' => 'Amassado novo na ponta.'],
+            ],
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('service_checklist_items', [
+            'id' => $item->id,
+            'status' => 'damaged',
+            'notes' => 'Amassado novo na ponta.',
+        ]);
+
+        $file = \Illuminate\Http\UploadedFile::fake()->create('disco.jpg', 24, 'image/jpeg');
+
+        $this->actingAs($admin)->post('/admin/services/'.$brakes->id.'/photos', [
+            'kind' => 'service',
+            'caption' => 'Disco após limpeza',
+            'photos' => [$file],
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('service_photos', [
+            'service_request_id' => $brakes->id,
+            'kind' => 'service',
+            'caption' => 'Disco após limpeza',
+        ]);
+    }
 }

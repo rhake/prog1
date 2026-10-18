@@ -48,6 +48,10 @@ class Labels
             'reminder' => [__('Lembrete'), 'warn'],
             'promotion' => [__('Promoção'), 'info'],
             'alert' => [__('Alerta'), 'danger'],
+            'ok' => [__('Inteiro'), 'ok'],
+            'damaged' => [__('Avaria'), 'danger'],
+            'missing' => [__('Ausente'), 'warn'],
+            'na' => [__('Não se aplica'), 'muted'],
             default => [$status, 'muted'],
         };
     }

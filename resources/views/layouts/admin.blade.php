@@ -18,7 +18,7 @@
             <x-brand :href="route('admin.dashboard')" class="brand" style="padding:8px 10px 16px" />
             <nav class="side-nav">
                 @foreach ($links as [$route, $icon, $label])
-                    <a class="side-link {{ request()->routeIs($route) ? 'on' : '' }}" href="{{ route($route) }}">
+                    <a class="side-link {{ request()->routeIs($route, $route.'.*') ? 'on' : '' }}" href="{{ route($route) }}">
                         <i data-lucide="{{ $icon }}"></i>
                         <span class="label">{{ $label }}</span>
                     </a>

@@ -13,6 +13,7 @@ use App\Models\ServiceRequest;
 use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Vehicle;
+use App\Support\ServiceVisitExamples;
 use Illuminate\Database\Seeder;
 
 class VeloSeeder extends Seeder
@@ -118,6 +119,7 @@ class VeloSeeder extends Seeder
         $basicCheck = Service::create(['service_name' => 'Check-up Básico', 'category' => 'Revisão', 'average_price' => 150, 'duration_minutes' => 40]);
         $fullCheck = Service::create(['service_name' => 'Check-up Completo', 'category' => 'Revisão', 'average_price' => 450, 'duration_minutes' => 120]);
         $injection = Service::create(['service_name' => 'Diagnóstico de Injeção', 'category' => 'Motor', 'average_price' => 280, 'duration_minutes' => 90]);
+        $tow = Service::create(['service_name' => 'Guincho 24h', 'category' => 'Socorro', 'average_price' => 320, 'duration_minutes' => 90]);
         Service::create(['service_name' => 'Alinhamento e Balanceamento', 'category' => 'Pneus', 'average_price' => 160, 'duration_minutes' => 50]);
 
         $corolla = Vehicle::create([
@@ -221,7 +223,7 @@ class VeloSeeder extends Seeder
             'payment_date' => now()->subDays(2)->toDateString(),
         ]);
 
-        ServiceRequest::create([
+        $oilRequest = ServiceRequest::create([
             'user_id' => $carlos->id,
             'vehicle_id' => $corolla->id,
             'service_id' => $oil->id,
@@ -231,8 +233,9 @@ class VeloSeeder extends Seeder
             'status' => 'pending',
             'scheduled_date' => now()->addDays(2)->toDateString(),
         ]);
+        $oilRequest->ensureChecklist();
 
-        ServiceRequest::create([
+        $brakeRequest = ServiceRequest::create([
             'user_id' => $carlos->id,
             'vehicle_id' => $civic->id,
             'service_id' => $brakes->id,
@@ -242,8 +245,9 @@ class VeloSeeder extends Seeder
             'status' => 'in_progress',
             'scheduled_date' => now()->toDateString(),
         ]);
+        ServiceVisitExamples::brakes($brakeRequest);
 
-        ServiceRequest::create([
+        $checkRequest = ServiceRequest::create([
             'user_id' => $ana->id,
             'vehicle_id' => $tcross->id,
             'service_id' => $fullCheck->id,
@@ -253,6 +257,19 @@ class VeloSeeder extends Seeder
             'status' => 'accepted',
             'scheduled_date' => now()->addDays(5)->toDateString(),
         ]);
+        $checkRequest->ensureChecklist();
+
+        $towRequest = ServiceRequest::create([
+            'user_id' => $carlos->id,
+            'vehicle_id' => $corolla->id,
+            'service_id' => $tow->id,
+            'garage_id' => $central->id,
+            'service_type' => $tow->service_name,
+            'description' => 'Pane elétrica na Augusta. Pedido de reboque.',
+            'status' => 'completed',
+            'scheduled_date' => now()->subDay()->toDateString(),
+        ]);
+        ServiceVisitExamples::towing($towRequest);
 
         ServiceHistory::create([
             'vehicle_id' => $corolla->id,

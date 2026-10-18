@@ -22,6 +22,16 @@ class ServiceRequestController extends Controller
         return view('app.services.index', ['requests' => $requests]);
     }
 
+    public function show(ServiceRequest $serviceRequest)
+    {
+        $this->authorize('view', $serviceRequest);
+
+        $serviceRequest->ensureChecklist();
+        $serviceRequest->load(['garage', 'vehicle', 'service', 'photos', 'checklistItems']);
+
+        return view('app.services.show', ['item' => $serviceRequest]);
+    }
+
     public function create(Request $request)
     {
         $vehicles = $request->user()->vehicles()->orderBy('brand')->get();
@@ -39,7 +49,7 @@ class ServiceRequestController extends Controller
         $service = Service::query()->findOrFail($request->integer('service_id'));
         $garage = Garage::query()->findOrFail($request->integer('garage_id'));
 
-        $request->user()->serviceRequests()->create([
+        $serviceRequest = $request->user()->serviceRequests()->create([
             'vehicle_id' => $vehicle->id,
             'service_id' => $service->id,
             'garage_id' => $garage->id,
@@ -48,6 +58,7 @@ class ServiceRequestController extends Controller
             'status' => 'pending',
             'scheduled_date' => $request->date('scheduled_date'),
         ]);
+        $serviceRequest->ensureChecklist();
 
         $request->user()->alerts()->create([
             'type' => 'service_update',
@@ -58,7 +69,7 @@ class ServiceRequestController extends Controller
             'read_status' => false,
         ]);
 
-        return redirect()->route('app.services.index')->with('success', __('Serviço solicitado.'));
+        return redirect()->route('app.services.show', $serviceRequest)->with('success', __('Serviço solicitado.'));
     }
 
     public function cancel(Request $request, ServiceRequest $serviceRequest)

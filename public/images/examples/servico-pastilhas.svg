@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="18" fill="#2a2118"/>
+  <rect x="28" y="24" width="584" height="372" rx="16" fill="#3a2c20" stroke="#f07010" stroke-width="3"/>
+  <rect x="70" y="70" width="140" height="200" rx="18" fill="#c9a27a"/>
+  <rect x="88" y="92" width="104" height="36" rx="6" fill="#8a6a4a"/>
+  <rect x="250" y="90" width="300" height="24" rx="8" fill="#f07010"/>
+  <rect x="250" y="130" width="260" height="16" rx="6" fill="#e8d5c4"/>
+  <rect x="250" y="160" width="220" height="16" rx="6" fill="#e8d5c4"/>
+  <circle cx="180" cy="300" r="34" fill="#333"/>
+  <circle cx="180" cy="300" r="16" fill="#888"/>
+  <text x="320" y="360" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">Pastilhas removidas</text>
+  <text x="320" y="386" text-anchor="middle" fill="#f0c9a8" font-family="Arial,sans-serif" font-size="14">Inspeção de freios — Civic DEF2E34</text>
+</svg>
