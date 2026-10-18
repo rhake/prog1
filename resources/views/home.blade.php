@@ -65,7 +65,7 @@
         <div class="wrap">
             <h2>{{ __('Planos') }}</h2>
             <p class="intro">{{ __('Escolha a cobertura do seu veículo.') }}</p>
-            <div class="plans">
+            <div class="plans plans-showcase">
                 @forelse ($plans as $plan)
                     <article class="card plan {{ $plan->isPopular() ? 'popular' : '' }}">
                         @if ($plan->isPopular())

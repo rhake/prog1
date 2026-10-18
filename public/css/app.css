@@ -150,6 +150,15 @@ html.dark .logo-dark, html.light .logo-light { display: block; }
 
 .plan { position: relative; display: flex; flex-direction: column; gap: 12px; }
 .plan.popular { border-color: var(--orange); background: linear-gradient(180deg, color-mix(in srgb, var(--orange) 18%, var(--card)), var(--card)); }
+.plans-showcase { align-items: center; padding-top: 20px; }
+.plans-showcase .plan.popular { z-index: 1; }
+@media (min-width: 901px) {
+  .plans-showcase .plan.popular {
+    padding-top: 42px;
+    padding-bottom: 46px;
+    box-shadow: 0 24px 48px rgba(240, 112, 16, .22);
+  }
+}
 .popular-tag {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
   background: var(--orange); color: white; border-radius: 999px;
