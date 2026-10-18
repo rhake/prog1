@@ -23,6 +23,8 @@ class AutossencialTest extends TestCase
             ->assertSee('Links importantes')
             ->assertSee('Precisa de ajuda?')
             ->assertSee('Assine agora')
+            ->assertSee('Criar conta')
+            ->assertSee('Falar com um consultor')
             ->assertDontSee('/locale/en');
     }
 

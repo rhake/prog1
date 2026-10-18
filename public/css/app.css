@@ -169,9 +169,13 @@ html.dark .logo-dark, html.light .logo-light { display: block; }
   padding: 36px 24px;
   text-align: center;
 }
-.cta p { color: rgba(255,255,255,.88); margin: 8px auto 18px; max-width: 460px; }
-.cta .btn { background: #111; color: white; }
-.cta .btn:hover { background: #000; }
+.cta p { color: rgba(255,255,255,.88); margin: 8px auto 18px; max-width: 520px; }
+.cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta .btn-account { background: #111; color: #fff; }
+.cta .btn-account:hover { background: #000; }
+.cta .btn-whatsapp { background: #128C7E; color: #fff; }
+.cta .btn-whatsapp:hover { background: #0e6f64; }
+.cta .btn-whatsapp svg { width: 20px; height: 20px; flex: none; }
 
 .faq { display: grid; gap: 12px; margin-top: 22px; }
 .faq h3 { margin-bottom: 6px; }
