@@ -19,6 +19,7 @@ class AutossencialTest extends TestCase
             ->assertSee('Autossencial')
             ->assertSee('AUTOSSENCIAL')
             ->assertSee('images/mark.png', false)
+            ->assertSee('images/wordmark.png', false)
             ->assertSee('saúde veicular')
             ->assertSee('Procure um ponto')
             ->assertSee('mais próximo')
