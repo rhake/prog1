@@ -26,7 +26,7 @@
         <img src="{{ asset('images/logo.png') }}" class="hero-logo logo-dark" alt="Autossencial">
         <img src="{{ asset('images/logo-light.png') }}" class="hero-logo logo-light" alt="Autossencial">
         <div class="pill"><i data-lucide="shield"></i> {{ __('Plano de saúde veicular') }}</div>
-        <h1>{{ __('Cuidar do carro') }}<br><span>{{ __('ficou simples') }}</span></h1>
+        <h1>Procure um ponto<br>de atendimento <span>mais próximo</span></h1>
         <p class="lead">{{ __('Manutenção, proteção e rastreamento em um plano só. A Autossencial acompanha cada veículo da sua garagem.') }}</p>
         <div class="hero-actions">
             @auth
