@@ -4,10 +4,7 @@
 @section('body')
     <header class="site-nav">
         <div class="wrap nav-inner">
-            <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo.png') }}" class="brand-logo logo-dark" alt="Autossencial">
-                <img src="{{ asset('images/logo-light.png') }}" class="brand-logo logo-light" alt="Autossencial">
-            </a>
+            <x-brand />
             <a class="btn btn-sm" href="{{ route('home') }}">Voltar</a>
         </div>
     </header>

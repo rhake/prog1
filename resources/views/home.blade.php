@@ -4,10 +4,7 @@
 @section('body')
     <header class="site-nav">
         <div class="wrap nav-inner">
-            <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo.png') }}" class="brand-logo logo-dark" alt="Autossencial">
-                <img src="{{ asset('images/logo-light.png') }}" class="brand-logo logo-light" alt="Autossencial">
-            </a>
+            <x-brand />
             <div class="nav-actions">
                 <a class="icon-btn" href="{{ route('theme') }}" aria-label="{{ __('Tema') }}"><i data-lucide="sun-moon"></i></a>
                 @auth

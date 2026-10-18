@@ -104,6 +104,28 @@ html.dark .logo-dark, html.light .logo-light { display: block; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .nav-inner > a { flex: none; }
 .brand-logo { height: 52px; width: auto; max-width: none; }
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  min-width: 0;
+}
+.site-brand-mark {
+  height: 40px;
+  width: auto;
+  aspect-ratio: 286 / 268;
+  object-fit: contain;
+  flex: none;
+}
+.site-brand-name {
+  font-weight: 800;
+  font-size: clamp(.95rem, 2.2vw, 1.22rem);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
 .nav-actions, .header-actions { display: flex; align-items: center; gap: 8px; }
 
 .hero { padding: 56px 0 28px; text-align: center; }
@@ -450,6 +472,8 @@ tr:last-child td { border-bottom: 0; }
   .footer-logo { height: 56px; }
   .nav-inner { flex-wrap: wrap; row-gap: 10px; }
   .brand-logo { height: 44px; }
+  .site-brand-mark { height: 34px; }
+  .site-brand { gap: 8px; }
   .nav-actions { width: 100%; justify-content: flex-end; }
 }
 

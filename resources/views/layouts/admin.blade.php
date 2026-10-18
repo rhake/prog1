@@ -15,11 +15,7 @@
     @endphp
     <div class="admin">
         <aside class="sidebar">
-            <a href="{{ route('admin.dashboard') }}" class="brand" style="padding:8px 10px 16px">
-                <img src="{{ asset('images/mark.png') }}" class="mark logo-dark" alt="">
-                <img src="{{ asset('images/mark-light.png') }}" class="mark logo-light" alt="">
-                Autossencial
-            </a>
+            <x-brand :href="route('admin.dashboard')" class="brand" style="padding:8px 10px 16px" />
             <nav class="side-nav">
                 @foreach ($links as [$route, $icon, $label])
                     <a class="side-link {{ request()->routeIs($route) ? 'on' : '' }}" href="{{ route($route) }}">

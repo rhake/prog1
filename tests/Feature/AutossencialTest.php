@@ -17,6 +17,8 @@ class AutossencialTest extends TestCase
         $this->get('/')
             ->assertOk()
             ->assertSee('Autossencial')
+            ->assertSee('AUTOSSENCIAL')
+            ->assertSee('images/mark.png', false)
             ->assertSee('saúde veicular')
             ->assertSee('Procure um ponto')
             ->assertSee('mais próximo')

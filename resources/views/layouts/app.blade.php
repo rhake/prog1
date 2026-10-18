@@ -11,11 +11,7 @@
     @endphp
     <div class="app-shell">
         <header class="app-header">
-            <a href="{{ route('app.home') }}" class="brand">
-                <img src="{{ asset('images/mark.png') }}" class="mark logo-dark" alt="">
-                <img src="{{ asset('images/mark-light.png') }}" class="mark logo-light" alt="">
-                Autossencial
-            </a>
+            <x-brand :href="route('app.home')" class="brand" />
             <div class="header-actions">
                 <a class="icon-btn" href="{{ route('theme') }}" aria-label="{{ __('Tema') }}"><i data-lucide="sun-moon"></i></a>
                 <a class="icon-btn" href="{{ route('app.alerts') }}" aria-label="{{ __('Notificações') }}">
