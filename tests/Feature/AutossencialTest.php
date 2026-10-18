@@ -28,6 +28,14 @@ class AutossencialTest extends TestCase
             ->assertDontSee('/locale/en');
     }
 
+    public function test_css_logo_page_is_public(): void
+    {
+        $this->get('/logo')
+            ->assertOk()
+            ->assertSee('Símbolo em CSS')
+            ->assertSee('clip-path: polygon', false);
+    }
+
     public function test_guest_cannot_open_the_app(): void
     {
         $this->get('/app')->assertRedirect('/login');
