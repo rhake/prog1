@@ -17,7 +17,6 @@
                 Autossencial
             </a>
             <div class="header-actions">
-                <x-locale />
                 <a class="icon-btn" href="{{ route('theme') }}" aria-label="{{ __('Tema') }}"><i data-lucide="sun-moon"></i></a>
                 <a class="icon-btn" href="{{ route('app.alerts') }}" aria-label="{{ __('Notificações') }}">
                     <i data-lucide="bell"></i>

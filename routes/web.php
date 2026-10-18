@@ -18,12 +18,10 @@ use App\Http\Controllers\App\VehicleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/locale/{locale}', [LocaleController::class, 'update'])->whereIn('locale', ['pt', 'en'])->name('locale');
 Route::get('/theme', [ThemeController::class, 'toggle'])->name('theme');
 
 Route::middleware('guest')->group(function () {

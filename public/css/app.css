@@ -218,10 +218,6 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); box-sha
 .flash { border-radius: 12px; padding: 12px 14px; font-size: .92rem; }
 .flash-ok { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
 .flash-danger { background: color-mix(in srgb, var(--danger) 16%, transparent); color: var(--danger); }
-.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
-.lang a { padding: 6px 8px; font-size: .75rem; font-weight: 700; color: var(--muted); }
-.lang a.on { background: var(--orange); color: white; }
-
 .app-shell { min-height: 100vh; }
 .app-header, .admin-top {
   position: sticky; top: 0; z-index: 30;

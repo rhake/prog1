@@ -40,7 +40,6 @@
             <header class="admin-top">
                 <strong>{{ __('Painel administrativo') }}</strong>
                 <div class="header-actions">
-                    <x-locale />
                     <a class="icon-btn" href="{{ route('theme') }}" aria-label="{{ __('Tema') }}"><i data-lucide="sun-moon"></i></a>
                     <span class="small muted">{{ auth()->user()->name }}</span>
                 </div>

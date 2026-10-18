@@ -9,7 +9,6 @@
                 <img src="{{ asset('images/logo-light.png') }}" class="brand-logo logo-light" alt="Autossencial">
             </a>
             <div class="nav-actions">
-                <x-locale />
                 <a class="icon-btn" href="{{ route('theme') }}" aria-label="{{ __('Tema') }}"><i data-lucide="sun-moon"></i></a>
                 @auth
                     <a class="btn btn-sm" href="{{ auth()->user()->isAdmin() ? route('admin.dashboard') : route('app.home') }}">

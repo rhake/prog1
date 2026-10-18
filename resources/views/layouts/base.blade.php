@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" class="{{ request()->cookie('theme', 'dark') === 'light' ? 'light' : 'dark' }}">
+<html lang="pt-BR" class="{{ request()->cookie('theme', 'dark') === 'light' ? 'light' : 'dark' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -14,7 +14,11 @@ class AutossencialTest extends TestCase
 
     public function test_home_shows_the_brand(): void
     {
-        $this->get('/')->assertOk()->assertSee('Autossencial')->assertSee('saúde veicular');
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Autossencial')
+            ->assertSee('saúde veicular')
+            ->assertDontSee('/locale/en');
     }
 
     public function test_guest_cannot_open_the_app(): void
