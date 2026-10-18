@@ -107,26 +107,14 @@ html.dark .logo-dark, html.light .logo-light { display: block; }
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   color: inherit;
   min-width: 0;
 }
-.site-brand-mark {
+.site-brand-logo {
   height: 40px;
   width: auto;
-  aspect-ratio: 286 / 268;
-  flex: none;
   display: block;
-  overflow: visible;
-}
-.site-brand-name {
-  font-family: Montserrat, "Segoe UI", sans-serif;
-  font-weight: 800;
-  font-size: 1.28rem;
-  letter-spacing: -.03em;
-  text-transform: uppercase;
-  line-height: 1;
-  white-space: nowrap;
+  flex: none;
 }
 .nav-actions, .header-actions { display: flex; align-items: center; gap: 8px; }
 
@@ -474,9 +462,7 @@ tr:last-child td { border-bottom: 0; }
   .footer-logo { height: 56px; }
   .nav-inner { flex-wrap: wrap; row-gap: 10px; }
   .brand-logo { height: 44px; }
-  .site-brand-mark { height: 34px; }
-  .site-brand-name { font-size: 1.05rem; }
-  .site-brand { gap: 8px; }
+  .site-brand-logo { height: 34px; }
   .nav-actions { width: 100%; justify-content: flex-end; }
 }
 
