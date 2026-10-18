@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <section class="section" style="background:var(--bg-2)">
+    <section class="section" id="sobre" style="background:var(--bg-2)">
         <div class="wrap">
             <h2>{{ __('O essencial do seu carro') }}</h2>
             <p class="intro">{{ __('Tudo que um plano de saúde veicular precisa entregar.') }}</p>
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="planos">
         <div class="wrap">
             <h2>{{ __('Planos') }}</h2>
             <p class="intro">{{ __('Escolha a cobertura do seu veículo.') }}</p>
@@ -108,6 +108,26 @@
         </div>
     </section>
 
+    <section class="section" id="perguntas" style="background:var(--bg-2)">
+        <div class="wrap">
+            <h2>Perguntas frequentes</h2>
+            <div class="faq">
+                <article class="card">
+                    <h3>O que o plano cobre?</h3>
+                    <p class="muted">Manutenção nas oficinas parceiras, alertas e, nos planos superiores, rastreamento e guincho. O detalhe de cada cobertura está na lista do plano.</p>
+                </article>
+                <article class="card">
+                    <h3>Como acho um ponto de atendimento?</h3>
+                    <p class="muted">Depois do cadastro, o mapa mostra as oficinas e os rastreadores vinculados aos seus veículos.</p>
+                </article>
+                <article class="card">
+                    <h3>Posso ter mais de um carro?</h3>
+                    <p class="muted">Sim. Cada veículo entra na sua garagem e pode ter o próprio plano.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="wrap">
             <div class="cta">
@@ -118,10 +138,5 @@
         </div>
     </section>
 
-    <footer>
-        <div class="wrap site-footer">
-            <strong style="color:var(--text)">Autossencial</strong>
-            <span>{{ __('Plano de saúde veicular') }} · © {{ date('Y') }}</span>
-        </div>
-    </footer>
+    @include('partials.footer')
 @endsection

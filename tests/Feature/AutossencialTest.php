@@ -20,6 +20,9 @@ class AutossencialTest extends TestCase
             ->assertSee('saúde veicular')
             ->assertSee('Procure um ponto')
             ->assertSee('mais próximo')
+            ->assertSee('Links importantes')
+            ->assertSee('Precisa de ajuda?')
+            ->assertSee('Assine agora')
             ->assertDontSee('/locale/en');
     }
 

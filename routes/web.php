@@ -22,6 +22,8 @@ use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::view('/privacidade', 'pages.privacy')->name('privacy');
+Route::view('/termos', 'pages.terms')->name('terms');
 Route::get('/theme', [ThemeController::class, 'toggle'])->name('theme');
 
 Route::middleware('guest')->group(function () {
