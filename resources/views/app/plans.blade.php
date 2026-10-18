@@ -9,7 +9,7 @@
     @foreach ($plans as $plan)
         <article class="card plan {{ $plan->isPopular() ? 'popular' : '' }}">
             @if ($plan->isPopular())
-                <span class="popular-tag">{{ __('Popular') }}</span>
+                <span class="popular-tag">Recomendado</span>
             @endif
             <h3>{{ $plan->plan_name }}</h3>
             <div class="price">@money($plan->monthly_price) <span>/{{ __('mês') }}</span></div>
@@ -22,6 +22,9 @@
             <p class="small muted center">{{ __('Até') }} {{ $plan->max_services_per_year }} {{ __('serviços/ano') }}</p>
             @if ($vehicles->isEmpty())
                 <a class="btn btn-outline" href="{{ route('app.vehicles.create') }}">{{ __('Cadastre um veículo') }}</a>
+                @if ($plan->isPopular())
+                    <p class="plan-note">* Escolhe perfeita de 7 em cada 10 clientes</p>
+                @endif
             @else
                 <form class="stack" method="post" action="{{ route('app.plans.subscribe') }}">
                     @csrf
@@ -34,6 +37,9 @@
                     <button class="btn {{ $activePlanIds->contains($plan->id) ? 'btn-outline' : '' }}" type="submit">
                         {{ $activePlanIds->contains($plan->id) ? __('Trocar para este plano') : __('Escolher plano') }}
                     </button>
+                    @if ($plan->isPopular())
+                        <p class="plan-note">* Escolhe perfeita de 7 em cada 10 clientes</p>
+                    @endif
                 </form>
             @endif
         </article>

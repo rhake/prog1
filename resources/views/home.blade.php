@@ -69,7 +69,7 @@
                 @forelse ($plans as $plan)
                     <article class="card plan {{ $plan->isPopular() ? 'popular' : '' }}">
                         @if ($plan->isPopular())
-                            <span class="popular-tag">{{ __('Popular') }}</span>
+                            <span class="popular-tag">Recomendado</span>
                         @endif
                         <h3>{{ $plan->plan_name }}</h3>
                         <div class="price">@money($plan->monthly_price) <span>/{{ __('mês') }}</span></div>
@@ -81,6 +81,9 @@
                             <li><i data-lucide="check"></i> {{ $plan->max_services_per_year }} {{ __('serviços/ano') }}</li>
                         </ul>
                         <a class="btn {{ $plan->isPopular() ? '' : 'btn-outline' }}" href="{{ route('register') }}">{{ __('Assinar') }}</a>
+                        @if ($plan->isPopular())
+                            <p class="plan-note">* Escolhe perfeita de 7 em cada 10 clientes</p>
+                        @endif
                     </article>
                 @empty
                     <p class="muted">{{ __('Os planos aparecem aqui depois da configuração inicial.') }}</p>

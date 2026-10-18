@@ -26,6 +26,6 @@ class Plan extends Model
 
     public function isPopular(): bool
     {
-        return $this->plan_name === 'Plus';
+        return $this->plan_name === 'Essencial';
     }
 }

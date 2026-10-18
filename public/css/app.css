@@ -164,6 +164,13 @@ html.dark .logo-dark, html.light .logo-light { display: block; }
   background: var(--orange); color: white; border-radius: 999px;
   font-size: .75rem; font-weight: 700; padding: 4px 10px;
 }
+.plan-note {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.35;
+}
 .price { font-size: 2.2rem; font-weight: 750; letter-spacing: -.04em; }
 .price span { font-size: .95rem; color: var(--muted); font-weight: 500; }
 .plan ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }

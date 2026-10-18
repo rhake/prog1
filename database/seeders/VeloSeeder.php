@@ -60,7 +60,7 @@ class VeloSeeder extends Seeder
         ]);
 
         $basic = Plan::create([
-            'plan_name' => 'Basic',
+            'plan_name' => 'Básico',
             'monthly_price' => 20,
             'description' => 'Manutenção essencial para o dia a dia.',
             'services_included' => ['Troca de Óleo', 'Inspeção de Freios', 'Check-up Básico'],
@@ -68,10 +68,10 @@ class VeloSeeder extends Seeder
         ]);
 
         $plus = Plan::create([
-            'plan_name' => 'Plus',
+            'plan_name' => 'Essencial',
             'monthly_price' => 49,
             'description' => 'Cobertura completa com rastreamento GPS.',
-            'services_included' => ['Tudo do Basic', 'Check-up Completo', 'Diagnóstico de Injeção', 'Rastreamento GPS'],
+            'services_included' => ['Tudo do Básico', 'Check-up Completo', 'Diagnóstico de Injeção', 'Rastreamento GPS'],
             'max_services_per_year' => 8,
         ]);
 
@@ -79,7 +79,7 @@ class VeloSeeder extends Seeder
             'plan_name' => 'Premium',
             'monthly_price' => 99,
             'description' => 'Proteção total, guincho 24h e carro reserva.',
-            'services_included' => ['Tudo do Plus', 'Cobertura a Terceiros', 'Guincho 24h', 'Carro Reserva'],
+            'services_included' => ['Tudo do Essencial', 'Cobertura a Terceiros', 'Guincho 24h', 'Carro Reserva'],
             'max_services_per_year' => 12,
         ]);
 
@@ -282,7 +282,7 @@ class VeloSeeder extends Seeder
         Alert::create([
             'user_id' => $carlos->id,
             'type' => 'payment',
-            'message' => 'Pagamento do plano Plus confirmado via PIX.',
+            'message' => 'Pagamento do plano Essencial confirmado via PIX.',
             'read_status' => false,
         ])->forceFill(['created_at' => now()->subDay()])->save();
 
