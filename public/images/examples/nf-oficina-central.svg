@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 820">
+  <rect width="620" height="820" fill="#f7f7f7"/>
+  <rect x="24" y="24" width="572" height="772" fill="#fff" stroke="#d8d8d8"/>
+  <rect x="24" y="24" width="572" height="88" fill="#111"/>
+  <text x="48" y="60" fill="#f07010" font-family="Arial,sans-serif" font-size="18" font-weight="700">NOTA FISCAL DE SERVIÇO</text>
+  <text x="48" y="86" fill="#fff" font-family="Arial,sans-serif" font-size="13">NFS-e 000.204 · Oficina Central</text>
+  <text x="48" y="140" fill="#111" font-family="Arial,sans-serif" font-size="13">Prestador: Oficina Central</text>
+  <text x="48" y="162" fill="#555" font-family="Arial,sans-serif" font-size="12">CNPJ 98.765.432/0001-10 · São Paulo/SP</text>
+  <text x="48" y="198" fill="#111" font-family="Arial,sans-serif" font-size="13">Tomador: Carlos Silva</text>
+  <text x="48" y="220" fill="#555" font-family="Arial,sans-serif" font-size="12">Veículo Toyota Corolla 2022 · Placa ABC1D23</text>
+  <rect x="48" y="248" width="524" height="1" fill="#e4e4e4"/>
+  <text x="48" y="280" fill="#111" font-family="Arial,sans-serif" font-size="13" font-weight="700">Descrição</text>
+  <text x="48" y="308" fill="#333" font-family="Arial,sans-serif" font-size="13">Guincho 24h · remoção e transporte até a base</text>
+  <text x="48" y="332" fill="#333" font-family="Arial,sans-serif" font-size="13">Km rodado na cidade de São Paulo</text>
+  <text x="48" y="380" fill="#111" font-family="Arial,sans-serif" font-size="13">Valor dos serviços</text>
+  <text x="470" y="380" fill="#111" font-family="Arial,sans-serif" font-size="13" text-anchor="end">R$ 320,00</text>
+  <text x="48" y="450" fill="#111" font-family="Arial,sans-serif" font-size="16" font-weight="700">Total</text>
+  <text x="470" y="450" fill="#f07010" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="end">R$ 320,00</text>
+  <text x="48" y="510" fill="#777" font-family="Arial,sans-serif" font-size="12">Documento de exemplo para conferência no painel.</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="18" fill="#3a220e"/>
+  <rect x="28" y="24" width="584" height="372" rx="16" fill="#4a2c12" stroke="#f07010" stroke-width="3"/>
+  <rect x="90" y="210" width="460" height="28" rx="6" fill="#888"/>
+  <rect x="160" y="130" width="320" height="80" rx="18" fill="#d7dde3"/>
+  <circle cx="200" cy="238" r="22" fill="#222"/>
+  <circle cx="440" cy="238" r="22" fill="#222"/>
+  <circle cx="130" cy="250" r="16" fill="#333"/>
+  <circle cx="510" cy="250" r="16" fill="#333"/>
+  <text x="320" y="360" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">Veículo na plataforma</text>
+  <text x="320" y="386" text-anchor="middle" fill="#f0c9a8" font-family="Arial,sans-serif" font-size="14">Transporte até a Oficina Central</text>
+</svg>

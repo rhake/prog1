@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="18" fill="#14301f"/>
+  <rect x="28" y="24" width="584" height="372" rx="16" fill="#1c3d28" stroke="#3dd68c" stroke-width="3"/>
+  <rect x="80" y="170" width="160" height="60" rx="10" fill="#f07010"/>
+  <rect x="250" y="150" width="300" height="80" rx="16" fill="#d7dde3"/>
+  <circle cx="130" cy="246" r="20" fill="#222"/>
+  <circle cx="200" cy="246" r="20" fill="#222"/>
+  <circle cx="320" cy="244" r="22" fill="#222"/>
+  <circle cx="500" cy="244" r="22" fill="#222"/>
+  <text x="320" y="360" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">Chegada na base</text>
+  <text x="320" y="386" text-anchor="middle" fill="#b6e8c9" font-family="Arial,sans-serif" font-size="14">19:05 · Oficina Central</text>
+</svg>

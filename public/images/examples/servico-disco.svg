@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="18" fill="#1d242b"/>
+  <rect x="28" y="24" width="584" height="372" rx="16" fill="#24303a" stroke="#7eb6ff" stroke-width="3"/>
+  <circle cx="320" cy="180" r="110" fill="#9aa4ad"/>
+  <circle cx="320" cy="180" r="78" fill="#4d5a64"/>
+  <circle cx="320" cy="180" r="28" fill="#1b1b1b"/>
+  <circle cx="320" cy="180" r="8" fill="#7eb6ff"/>
+  <text x="320" y="360" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">Disco após retífica</text>
+  <text x="320" y="386" text-anchor="middle" fill="#b9c9d6" font-family="Arial,sans-serif" font-size="14">Rotor dianteiro — Civic DEF2E34</text>
+</svg>
